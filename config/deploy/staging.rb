@@ -1,3 +1,5 @@
+
+set :deploy_to , :'/home/ubuntu'
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
@@ -7,7 +9,7 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-
+server '192.168.1.145', user: 'ubuntu', roles: %w{}
 
 # role-based syntax
 # ==================

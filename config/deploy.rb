@@ -1,8 +1,51 @@
 # config valid only for current version of Capistrano
 lock '3.5.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+
+set :repo_url, 'https://github.com/capistrano/rails.git'
+
+
+# If the environment differs from the stage name
+set :rails_env, 'staging'
+
+# Defaults to 'db'
+set :migration_role, 'migrator'
+
+# Defaults to false
+# Skip migration if files in db/migrate were not modified
+set :conditionally_migrate, true
+
+# Defaults to [:web]
+set :assets_roles, [:web, :app]
+
+# Defaults to 'assets'
+# This should match config.assets.prefix in your rails config/application.rb
+set :assets_prefix, 'prepackaged-assets'
+
+# If you need to touch public/images, public/javascripts, and public/stylesheets on each deploy
+set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
+
+# Defaults to nil (no asset cleanup is performed)
+# If you use Rails 4+ and you'd like to clean up old assets after each deploy,
+# set this to the number of versions to keep
+set :keep_assets, 2
+
+# Defaults to the primary :db server
+set :migration_role, :db
+set :migration_servers, -> { primary(fetch(:migration_role)) }
+
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+
+#set :application, 'my_app_name'
+#set :repo_url, 'https://github.com/trovsankar/sample-app.git'
+
+#set :github_access_token, '31ac4f7d6c2b8f3a5f90e4369d06745e89c3dc59'
+
+#set :database_name, ask('Enter the database name:')
+#ask(:database_encoding, 'UTF-8')
+
+#fetch(:database_encoding)
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

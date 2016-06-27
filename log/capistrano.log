@@ -1,0 +1,263 @@
+# Logfile created on 2016-06-27 15:16:05 +0530 by logger.rb/v1.2.7
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:16:05 +0530 cap staging check_write_permissions
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6107fa4d] Running [ -w /var/www/my_app_name ] as ubuntu@192.168.1.145
+ DEBUG [6107fa4d] Command: [ -w /var/www/my_app_name ]
+ DEBUG [6107fa4d] Finished in 12.041 seconds with exit status 1 (failed).
+ ERROR /var/www/my_app_name is not writable on 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:18:23 +0530 cap staging check_write_permissions
+  INFO ---------------------------------------------------------------------------
+ DEBUG [c4a763f7] Running [ -w /home/ubuntu ] as ubuntu@192.168.1.145
+ DEBUG [c4a763f7] Command: [ -w /home/ubuntu ]
+ DEBUG [c4a763f7] Finished in 8.002 seconds with exit status 0 (successful).
+  INFO /home/ubuntu is writable on 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:18:47 +0530 cap staging git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [f26e36ae] Running /usr/bin/env mkdir -p /tmp/my_app_name/ as ubuntu@192.168.1.145
+ DEBUG [f26e36ae] Command: /usr/bin/env mkdir -p /tmp/my_app_name/
+  INFO [f26e36ae] Finished in 8.895 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_app_name/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_app_name/git-ssh.sh 100.0%
+  INFO [702835fa] Running /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [702835fa] Command: /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh
+  INFO [702835fa] Finished in 0.391 seconds with exit status 0 (successful).
+  INFO [ce89ea70] Running /usr/bin/env git ls-remote --heads git@example.com:me/my_repo.git as ubuntu@192.168.1.145
+ DEBUG [ce89ea70] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_app_name/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@example.com:me/my_repo.git )
+ DEBUG [ce89ea70] 	/usr/bin/env: 
+ DEBUG [ce89ea70] 	git
+ DEBUG [ce89ea70] 	: No such file or directory
+ DEBUG [ce89ea70] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:25:24 +0530 cap staging forwarding
+  INFO ---------------------------------------------------------------------------
+ DEBUG [d8d5671e] Running env | grep SSH_AUTH_SOCK as ubuntu@192.168.1.145
+ DEBUG [d8d5671e] Command: env | grep SSH_AUTH_SOCK
+ DEBUG [d8d5671e] 	SSH_AUTH_SOCK=/tmp/ssh-rK4e8HYwEa/agent.1620
+ DEBUG [d8d5671e] Finished in 11.986 seconds with exit status 0 (successful).
+  INFO Agent forwarding is up to 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:26:12 +0530 cap staging forwarding
+  INFO ---------------------------------------------------------------------------
+ DEBUG [84281d81] Running env | grep SSH_AUTH_SOCK as ubuntu@192.168.1.145
+ DEBUG [84281d81] Command: env | grep SSH_AUTH_SOCK
+ DEBUG [84281d81] 	SSH_AUTH_SOCK=/tmp/ssh-1YVOjN64bS/agent.1677
+ DEBUG [84281d81] Finished in 13.410 seconds with exit status 0 (successful).
+  INFO Agent forwarding is up to 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:26:57 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fd7af3f3] Running /usr/bin/env mkdir -p /tmp/my_app_name/ as ubuntu@192.168.1.145
+ DEBUG [fd7af3f3] Command: /usr/bin/env mkdir -p /tmp/my_app_name/
+  INFO [fd7af3f3] Finished in 17.893 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_app_name/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_app_name/git-ssh.sh 100.0%
+  INFO [69179f33] Running /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [69179f33] Command: /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh
+  INFO [69179f33] Finished in 0.261 seconds with exit status 0 (successful).
+  INFO [de78514f] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [de78514f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_app_name/git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [de78514f] 	/usr/bin/env: 
+ DEBUG [de78514f] 	git
+ DEBUG [de78514f] 	: No such file or directory
+ DEBUG [de78514f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:29:46 +0530 cap production github:deployments
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:29:55 +0530 cap staging github:deployments
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:30:44 +0530 cap staging github:deployments
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:38:58 +0530 cap staging git_install
+  INFO ---------------------------------------------------------------------------
+  INFO [70f4ff88] Running /usr/bin/env sudo apt-get install git as ubuntu@192.168.1.145
+ DEBUG [70f4ff88] Command: /usr/bin/env sudo apt-get install git
+ DEBUG [70f4ff88] 	sudo: unable to resolve host test-1
+ DEBUG [70f4ff88] 	Reading package lists...
+ DEBUG [70f4ff88] 	
+ DEBUG [70f4ff88] 	Building dependency tree...
+ DEBUG [70f4ff88] 	
+ DEBUG [70f4ff88] 	Reading state information...
+ DEBUG [70f4ff88] 	
+ DEBUG [70f4ff88] 	The following extra packages will be installed:
+ DEBUG [70f4ff88] 	  git-man liberror-perl
+ DEBUG [70f4ff88] 	Suggested packages:
+ DEBUG [70f4ff88] 	  git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+ DEBUG [70f4ff88] 	  gitweb git-arch git-bzr git-cvs git-mediawiki git-svn
+ DEBUG [70f4ff88] 	The following NEW packages will be installed:
+ DEBUG [70f4ff88] 	  git git-man liberror-perl
+ DEBUG [70f4ff88] 	0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3306 kB of archives.
+After this operation, 21.9 MB of additional disk space will be used.
+Do you want to continue?
+ DEBUG [70f4ff88] 	 [Y/n] 
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:40:16 +0530 cap staging git_install
+  INFO ---------------------------------------------------------------------------
+  INFO [47fefd22] Running /usr/bin/env sudo apt-get -y install git as ubuntu@192.168.1.145
+ DEBUG [47fefd22] Command: /usr/bin/env sudo apt-get -y install git
+ DEBUG [47fefd22] 	sudo: unable to resolve host test-1
+ DEBUG [47fefd22] 	Reading package lists...
+ DEBUG [47fefd22] 	
+ DEBUG [47fefd22] 	Building dependency tree...
+ DEBUG [47fefd22] 	
+ DEBUG [47fefd22] 	Reading state information...
+ DEBUG [47fefd22] 	
+ DEBUG [47fefd22] 	The following extra packages will be installed:
+ DEBUG [47fefd22] 	  git-man liberror-perl
+ DEBUG [47fefd22] 	Suggested packages:
+ DEBUG [47fefd22] 	  git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk
+ DEBUG [47fefd22] 	  gitweb git-arch git-bzr git-cvs git-mediawiki git-svn
+ DEBUG [47fefd22] 	The following NEW packages will be installed:
+ DEBUG [47fefd22] 	  git git-man liberror-perl
+ DEBUG [47fefd22] 	0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 3306 kB of archives.
+After this operation, 21.9 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB]
+ DEBUG [47fefd22] 	Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.3 [699 kB]
+ DEBUG [47fefd22] 	Get:3 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.3 [2586 kB]
+ DEBUG [47fefd22] 	perl: warning: Setting locale failed.
+ DEBUG [47fefd22] 	perl: warning: Please check that your locale settings:
+ DEBUG [47fefd22] 		LANGUAGE = (unset),
+ DEBUG [47fefd22] 		LC_ALL = (unset),
+ DEBUG [47fefd22] 		LC_TIME = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_MONETARY = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_ADDRESS = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_TELEPHONE = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_NAME = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_MEASUREMENT = "en_IN.UTF-8",
+ DEBUG [47fefd22] 		LC_IDENTIFICATION = "en_IN.UTF-8",
+	LC_NUMERIC = "en_IN.UTF-8",
+	LC_PAPER = "en_IN.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+ DEBUG [47fefd22] 	locale: 
+ DEBUG [47fefd22] 	Cannot set LC_ALL to default locale
+ DEBUG [47fefd22] 	: No such file or directory
+ DEBUG [47fefd22] 	
+ DEBUG [47fefd22] 	debconf: unable to initialize frontend: Dialog
+ DEBUG [47fefd22] 	debconf: (Dialog frontend will not work on a dumb terminal, an emacs shell buffer, or without a controlling terminal.)
+ DEBUG [47fefd22] 	debconf: falling back to frontend: Readline
+ DEBUG [47fefd22] 	debconf: unable to initialize frontend: Readline
+ DEBUG [47fefd22] 	debconf: (This frontend requires a controlling tty.)
+ DEBUG [47fefd22] 	debconf: falling back to frontend: Teletype
+ DEBUG [47fefd22] 	dpkg-preconfigure: unable to re-open stdin: 
+ DEBUG [47fefd22] 	Fetched 3306 kB in 8s (380 kB/s)
+ DEBUG [47fefd22] 	Selecting previously unselected package liberror-perl.
+ DEBUG [47fefd22] 	(Reading database ... 51163 files and directories currently installed.)
+ DEBUG [47fefd22] 	Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...
+ DEBUG [47fefd22] 	Unpacking liberror-perl (0.17-1.1) ...
+ DEBUG [47fefd22] 	Selecting previously unselected package git-man.
+ DEBUG [47fefd22] 	Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.3_all.deb ...
+ DEBUG [47fefd22] 	Unpacking git-man (1:1.9.1-1ubuntu0.3) ...
+ DEBUG [47fefd22] 	Selecting previously unselected package git.
+ DEBUG [47fefd22] 	Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.3_amd64.deb ...
+ DEBUG [47fefd22] 	Unpacking git (1:1.9.1-1ubuntu0.3) ...
+ DEBUG [47fefd22] 	Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+ DEBUG [47fefd22] 	Setting up liberror-perl (0.17-1.1) ...
+ DEBUG [47fefd22] 	Setting up git-man (1:1.9.1-1ubuntu0.3) ...
+ DEBUG [47fefd22] 	Setting up git (1:1.9.1-1ubuntu0.3) ...
+  INFO [47fefd22] Finished in 77.426 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:41:44 +0530 cap staging git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [e2b89ca7] Running /usr/bin/env mkdir -p /tmp/my_app_name/ as ubuntu@192.168.1.145
+ DEBUG [e2b89ca7] Command: /usr/bin/env mkdir -p /tmp/my_app_name/
+  INFO [e2b89ca7] Finished in 13.652 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/my_app_name/git-ssh.sh 0.0%
+  INFO Uploading /tmp/my_app_name/git-ssh.sh 100.0%
+  INFO [3c960e10] Running /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [3c960e10] Command: /usr/bin/env chmod +rx /tmp/my_app_name/git-ssh.sh
+  INFO [3c960e10] Finished in 0.588 seconds with exit status 0 (successful).
+  INFO [9446db10] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [9446db10] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/my_app_name/git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [9446db10] 	b305ade9daec6662e35e407b22eb5d35ee3323ce	refs/heads/master
+  INFO [9446db10] Finished in 3.835 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:46:45 +0530 cap staging install
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:48:15 +0530 cap staging notify
+  INFO ---------------------------------------------------------------------------
+  INFO [461a8359] Running /usr/bin/env rake service:notify as shankar@localhost
+ DEBUG [461a8359] Command: ( export RAILS_ENV="development" ; /usr/bin/env rake service:notify )
+ DEBUG [461a8359] 	rake aborted!
+ DEBUG [461a8359] 	No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+ DEBUG [461a8359] 	/usr/local/rvm/gems/ruby-head@global/gems/rake-11.2.2/exe/rake:27:in `<top (required)>'
+ DEBUG [461a8359] 	/usr/local/rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `eval'
+ DEBUG [461a8359] 	/usr/local/rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [461a8359] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:49:00 +0530 cap staging notify
+  INFO ---------------------------------------------------------------------------
+  INFO [ecdd8829] Running /usr/bin/env rake service:notify as shankar@localhost
+ DEBUG [ecdd8829] Command: ( export RAILS_ENV="development" ; /usr/bin/env rake service:notify )
+ DEBUG [ecdd8829] 	rake aborted!
+ DEBUG [ecdd8829] 	No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+ DEBUG [ecdd8829] 	/usr/local/rvm/gems/ruby-head@global/gems/rake-11.2.2/exe/rake:27:in `<top (required)>'
+ DEBUG [ecdd8829] 	/usr/local/rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `eval'
+ DEBUG [ecdd8829] 	/usr/local/rvm/gems/ruby-head/bin/ruby_executable_hooks:15:in `<main>'
+ DEBUG [ecdd8829] 	(See full trace by running task with --trace)
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:57:32 +0530 cap staging console
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 15:59:38 +0530 cap staging console
+  INFO ---------------------------------------------------------------------------
+  INFO [394ecbea] Running /usr/bin/env ls as ubuntu@192.168.1.145
+ DEBUG [394ecbea] Command: /usr/bin/env ls
+  INFO [394ecbea] Finished in 6.987 seconds with exit status 0 (successful).
+  INFO [f1d5c1f9] Running bundle exec cap production console as ubuntu@192.168.1.145
+ DEBUG [f1d5c1f9] Command: bundle exec cap production console
+ DEBUG [f1d5c1f9] 	bash: bundle: command not found
+  INFO [e91267ba] Running bundle exec cap staging console as ubuntu@192.168.1.145
+ DEBUG [e91267ba] Command: bundle exec cap staging console
+ DEBUG [e91267ba] 	bash: bundle: command not found
+  INFO [cfa8dcda] Running /usr/bin/env uptime as ubuntu@192.168.1.145
+ DEBUG [cfa8dcda] Command: /usr/bin/env uptime
+ DEBUG [cfa8dcda] 	 10:31:02 up  3:05,  0 users,  load average: 0.11, 0.05, 0.06
+  INFO [cfa8dcda] Finished in 0.336 seconds with exit status 0 (successful).
+  INFO [c7c7481b] Running /usr/bin/env who as ubuntu@192.168.1.145
+ DEBUG [c7c7481b] Command: /usr/bin/env who
+  INFO [c7c7481b] Finished in 0.296 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 16:22:16 +0530 cap staging breakfast
+  INFO ---------------------------------------------------------------------------
+ DEBUG [289d4cd7] Running [ -d ~/.rvm ] as ubuntu@192.168.1.145
+ DEBUG [289d4cd7] Command: [ -d ~/.rvm ]
+ DEBUG [289d4cd7] Finished in 10.955 seconds with exit status 1 (failed).
+ DEBUG [78948161] Running [ -d /usr/local/rvm ] as ubuntu@192.168.1.145
+ DEBUG [78948161] Command: [ -d /usr/local/rvm ]
+ DEBUG [78948161] Finished in 11.321 seconds with exit status 1 (failed).
+ DEBUG [b8c6c347] Running ~/.rvm/bin/rvm version as ubuntu@192.168.1.145
+ DEBUG [b8c6c347] Command: ~/.rvm/bin/rvm version
+ DEBUG [b8c6c347] 	bash: /home/ubuntu/.rvm/bin/rvm: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 16:31:35 +0530 cap staging cap deploy:migrate
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 16:31:40 +0530 cap staging deploy:migrate
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-27 16:31:44 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c7f12fdd] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [c7f12fdd] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [c7f12fdd] Finished in 12.751 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [de226713] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [de226713] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [de226713] Finished in 0.588 seconds with exit status 0 (successful).
+  INFO [7998d212] Running /usr/bin/env git ls-remote --heads https://github.com/capistrano/rails.git as ubuntu@192.168.1.145
+ DEBUG [7998d212] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/capistrano/rails.git )
+ DEBUG [7998d212] 	9ab0dfb342687ccd651467238f121221e1592b58	refs/heads/fix/no-default-cleanup
+96b1aed49bae1b100cd171ac2165b208ebdc0a2e	refs/heads/master
+e8ad7eddc10cd4fe2910de860fe570550a2846e4	refs/heads/sprockets-3
+  INFO [7998d212] Finished in 4.387 seconds with exit status 0 (successful).
