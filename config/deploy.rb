@@ -4,6 +4,9 @@ lock '3.5.0'
 #set :application, 'my_app_name'
 set :repo_url, 'https://github.com/trovsankar/sample-app.git'
 
+
+#set :rvm_type, :auto                    # Defaults to: :auto
+#set :rvm_ruby_version, 'default'      # Defaults to: 'default'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
