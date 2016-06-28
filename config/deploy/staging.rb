@@ -11,6 +11,7 @@
 set :deploy_to, '/home/ubuntu'
 
 server '192.168.1.145', user: 'ubuntu'
+set :rvm_roles, [:app, :web]
 
 # role-based syntax
 # ==================

@@ -402,3 +402,426 @@
   INFO [2b832e72] Running /usr/bin/env echo "Branch master (at 7a2344611d205db3b82c4469fec170d00ce2676a) deployed as release 20160628073055 by shankar" >> /home/ubuntu/revisions.log as ubuntu@192.168.1.145
  DEBUG [2b832e72] Command: cd /home/ubuntu/releases && /usr/bin/env echo "Branch master (at 7a2344611d205db3b82c4469fec170d00ce2676a) deployed as release 20160628073055 by shankar" >> /home/ubuntu/revisions.log
   INFO [2b832e72] Finished in 0.369 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:45:39 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [eb15afd7] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [eb15afd7] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [eb15afd7] Finished in 17.524 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [1269df98] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [1269df98] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [1269df98] Finished in 0.353 seconds with exit status 0 (successful).
+  INFO [d5f96ef7] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [d5f96ef7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [d5f96ef7] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [d5f96ef7] Finished in 3.393 seconds with exit status 0 (successful).
+  INFO [9cfe90e4] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [9cfe90e4] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [9cfe90e4] Finished in 0.303 seconds with exit status 0 (successful).
+ DEBUG [fdea7ce5] Running [ -f /home/ubuntu/current/REVISION ] as ubuntu@192.168.1.145
+ DEBUG [fdea7ce5] Command: [ -f /home/ubuntu/current/REVISION ]
+ DEBUG [fdea7ce5] Finished in 0.116 seconds with exit status 0 (successful).
+ DEBUG [0ce7728d] Running /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null as ubuntu@192.168.1.145
+ DEBUG [0ce7728d] Command: /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null
+ DEBUG [0ce7728d] 	7a2344611d205db3b82c4469fec170d00ce2676a
+ DEBUG [0ce7728d] Finished in 0.271 seconds with exit status 0 (successful).
+ DEBUG [58146f23] Running [ -f /home/ubuntu/repo/HEAD ] as ubuntu@192.168.1.145
+ DEBUG [58146f23] Command: [ -f /home/ubuntu/repo/HEAD ]
+ DEBUG [58146f23] Finished in 0.127 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/repo
+ DEBUG [31352397] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [31352397] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [31352397] Finished in 0.116 seconds with exit status 0 (successful).
+  INFO [9fdeb13c] Running /usr/bin/env git remote update --prune as ubuntu@192.168.1.145
+ DEBUG [9fdeb13c] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9fdeb13c] 	Fetching origin
+ DEBUG [9fdeb13c] 	From https://github.com/trovsankar/sample-app
+ DEBUG [9fdeb13c] 	   7a23446..9e2a5b2  master     -> master
+  INFO [9fdeb13c] Finished in 7.629 seconds with exit status 0 (successful).
+ DEBUG [612ad298] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [612ad298] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [612ad298] Finished in 0.264 seconds with exit status 0 (successful).
+  INFO [917279e2] Running /usr/bin/env mkdir -p /home/ubuntu/releases/20160628101613 as ubuntu@192.168.1.145
+ DEBUG [917279e2] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env mkdir -p /home/ubuntu/releases/20160628101613 )
+  INFO [917279e2] Finished in 0.604 seconds with exit status 0 (successful).
+  INFO [2fb1420d] Running /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628101613 as ubuntu@192.168.1.145
+ DEBUG [2fb1420d] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628101613 )
+  INFO [2fb1420d] Finished in 2.397 seconds with exit status 0 (successful).
+ DEBUG [d200b04a] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [d200b04a] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [d200b04a] Finished in 0.192 seconds with exit status 0 (successful).
+ DEBUG [346b0588] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@192.168.1.145
+ DEBUG [346b0588] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [346b0588] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [346b0588] Finished in 0.975 seconds with exit status 0 (successful).
+ DEBUG [e5339f57] Running if test ! -d /home/ubuntu/releases/20160628101613; then echo "Directory does not exist '/home/ubuntu/releases/20160628101613'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [e5339f57] Command: if test ! -d /home/ubuntu/releases/20160628101613; then echo "Directory does not exist '/home/ubuntu/releases/20160628101613'" 1>&2; false; fi
+ DEBUG [e5339f57] Finished in 0.190 seconds with exit status 0 (successful).
+  INFO [9e7ad074] Running /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION as ubuntu@192.168.1.145
+ DEBUG [9e7ad074] Command: cd /home/ubuntu/releases/20160628101613 && /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION
+  INFO [9e7ad074] Finished in 0.459 seconds with exit status 0 (successful).
+ DEBUG [1977977d] Running if test ! -d /home/ubuntu/releases/20160628101613; then echo "Directory does not exist '/home/ubuntu/releases/20160628101613'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [1977977d] Command: if test ! -d /home/ubuntu/releases/20160628101613; then echo "Directory does not exist '/home/ubuntu/releases/20160628101613'" 1>&2; false; fi
+ DEBUG [1977977d] Finished in 0.862 seconds with exit status 0 (successful).
+  INFO [d561dff4] Running /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet as ubuntu@192.168.1.145
+ DEBUG [d561dff4] Command: cd /home/ubuntu/releases/20160628101613 && /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet
+ DEBUG [d561dff4] 	bash: /bin/rvm: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:47:28 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [05e355cd] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [05e355cd] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [05e355cd] Finished in 17.894 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [2da1e8be] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [2da1e8be] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [2da1e8be] Finished in 0.530 seconds with exit status 0 (successful).
+  INFO [8c752a55] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [8c752a55] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [8c752a55] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [8c752a55] Finished in 3.755 seconds with exit status 0 (successful).
+  INFO [2bc1cca7] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [2bc1cca7] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [2bc1cca7] Finished in 0.503 seconds with exit status 0 (successful).
+ DEBUG [df75ccdf] Running [ -f /home/ubuntu/current/REVISION ] as ubuntu@192.168.1.145
+ DEBUG [df75ccdf] Command: [ -f /home/ubuntu/current/REVISION ]
+ DEBUG [df75ccdf] Finished in 0.207 seconds with exit status 0 (successful).
+ DEBUG [0de618d2] Running /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null as ubuntu@192.168.1.145
+ DEBUG [0de618d2] Command: /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null
+ DEBUG [0de618d2] 	7a2344611d205db3b82c4469fec170d00ce2676a
+ DEBUG [0de618d2] Finished in 0.568 seconds with exit status 0 (successful).
+ DEBUG [96761f63] Running [ -f /home/ubuntu/repo/HEAD ] as ubuntu@192.168.1.145
+ DEBUG [96761f63] Command: [ -f /home/ubuntu/repo/HEAD ]
+ DEBUG [96761f63] Finished in 0.197 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/repo
+ DEBUG [107ba00b] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [107ba00b] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [107ba00b] Finished in 0.201 seconds with exit status 0 (successful).
+  INFO [7a34da18] Running /usr/bin/env git remote update --prune as ubuntu@192.168.1.145
+ DEBUG [7a34da18] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7a34da18] 	Fetching origin
+  INFO [7a34da18] Finished in 5.057 seconds with exit status 0 (successful).
+ DEBUG [61ed4fb3] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [61ed4fb3] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [61ed4fb3] Finished in 0.816 seconds with exit status 0 (successful).
+  INFO [59517e26] Running /usr/bin/env mkdir -p /home/ubuntu/releases/20160628101842 as ubuntu@192.168.1.145
+ DEBUG [59517e26] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env mkdir -p /home/ubuntu/releases/20160628101842 )
+  INFO [59517e26] Finished in 1.176 seconds with exit status 0 (successful).
+  INFO [a680afd4] Running /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628101842 as ubuntu@192.168.1.145
+ DEBUG [a680afd4] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628101842 )
+  INFO [a680afd4] Finished in 1.073 seconds with exit status 0 (successful).
+ DEBUG [df746193] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [df746193] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [df746193] Finished in 0.292 seconds with exit status 0 (successful).
+ DEBUG [fef8005e] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@192.168.1.145
+ DEBUG [fef8005e] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [fef8005e] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [fef8005e] Finished in 0.570 seconds with exit status 0 (successful).
+ DEBUG [2f613c66] Running if test ! -d /home/ubuntu/releases/20160628101842; then echo "Directory does not exist '/home/ubuntu/releases/20160628101842'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [2f613c66] Command: if test ! -d /home/ubuntu/releases/20160628101842; then echo "Directory does not exist '/home/ubuntu/releases/20160628101842'" 1>&2; false; fi
+ DEBUG [2f613c66] Finished in 0.251 seconds with exit status 0 (successful).
+  INFO [5b6d6e74] Running /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION as ubuntu@192.168.1.145
+ DEBUG [5b6d6e74] Command: cd /home/ubuntu/releases/20160628101842 && /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION
+  INFO [5b6d6e74] Finished in 0.538 seconds with exit status 0 (successful).
+ DEBUG [6c35c221] Running if test ! -d /home/ubuntu/releases/20160628101842; then echo "Directory does not exist '/home/ubuntu/releases/20160628101842'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [6c35c221] Command: if test ! -d /home/ubuntu/releases/20160628101842; then echo "Directory does not exist '/home/ubuntu/releases/20160628101842'" 1>&2; false; fi
+ DEBUG [6c35c221] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [9e00f465] Running /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet as ubuntu@192.168.1.145
+ DEBUG [9e00f465] Command: cd /home/ubuntu/releases/20160628101842 && /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet
+ DEBUG [9e00f465] 	bash: /bin/rvm: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:49:28 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [5de83697] Running [ -d ~/.rvm ] as ubuntu@192.168.1.145
+ DEBUG [5de83697] Command: [ -d ~/.rvm ]
+ DEBUG [5de83697] Finished in 14.002 seconds with exit status 1 (failed).
+ DEBUG [7e1b4914] Running [ -d /usr/local/rvm ] as ubuntu@192.168.1.145
+ DEBUG [7e1b4914] Command: [ -d /usr/local/rvm ]
+ DEBUG [7e1b4914] Finished in 10.236 seconds with exit status 0 (successful).
+ DEBUG [79337c9b] Running /usr/local/rvm/bin/rvm version as ubuntu@192.168.1.145
+ DEBUG [79337c9b] Command: /usr/local/rvm/bin/rvm version
+ DEBUG [79337c9b] 	rvm 1.27.0 (latest) by Wayne E. Seguin <wayneeseguin@gmail.com>, Michal Papis <mpapis@gmail.com> [https://rvm.io/]
+ DEBUG [79337c9b] Finished in 6.733 seconds with exit status 0 (successful).
+ DEBUG [65ef2834] Running /usr/local/rvm/bin/rvm current as ubuntu@192.168.1.145
+ DEBUG [65ef2834] Command: /usr/local/rvm/bin/rvm current
+ DEBUG [65ef2834] 	ruby-2.2.1
+ DEBUG [65ef2834] Finished in 8.945 seconds with exit status 0 (successful).
+ DEBUG [9d854048] Running /usr/local/rvm/bin/rvm default do ruby --version as ubuntu@192.168.1.145
+ DEBUG [9d854048] Command: /usr/local/rvm/bin/rvm default do ruby --version
+ DEBUG [9d854048] 	ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-linux]
+ DEBUG [9d854048] Finished in 21.989 seconds with exit status 0 (successful).
+  INFO [a2403813] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [a2403813] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [a2403813] Finished in 0.573 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [cfbd12a0] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [cfbd12a0] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [cfbd12a0] Finished in 0.568 seconds with exit status 0 (successful).
+  INFO [b525591f] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [b525591f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [b525591f] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [b525591f] Finished in 3.734 seconds with exit status 0 (successful).
+  INFO [9e395432] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [9e395432] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [9e395432] Finished in 0.635 seconds with exit status 0 (successful).
+ DEBUG [4721a64e] Running [ -f /home/ubuntu/current/REVISION ] as ubuntu@192.168.1.145
+ DEBUG [4721a64e] Command: [ -f /home/ubuntu/current/REVISION ]
+ DEBUG [4721a64e] Finished in 0.236 seconds with exit status 0 (successful).
+ DEBUG [e4db8ed4] Running /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null as ubuntu@192.168.1.145
+ DEBUG [e4db8ed4] Command: /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null
+ DEBUG [e4db8ed4] 	7a2344611d205db3b82c4469fec170d00ce2676a
+ DEBUG [e4db8ed4] Finished in 0.602 seconds with exit status 0 (successful).
+ DEBUG [6e5e52e6] Running [ -f /home/ubuntu/repo/HEAD ] as ubuntu@192.168.1.145
+ DEBUG [6e5e52e6] Command: [ -f /home/ubuntu/repo/HEAD ]
+ DEBUG [6e5e52e6] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/repo
+ DEBUG [5c35c784] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [5c35c784] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [5c35c784] Finished in 0.291 seconds with exit status 0 (successful).
+  INFO [006ca4a7] Running /usr/bin/env git remote update --prune as ubuntu@192.168.1.145
+ DEBUG [006ca4a7] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [006ca4a7] 	Fetching origin
+  INFO [006ca4a7] Finished in 5.242 seconds with exit status 0 (successful).
+ DEBUG [06abcb19] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [06abcb19] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [06abcb19] Finished in 0.236 seconds with exit status 0 (successful).
+  INFO [2e59a955] Running /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102037 as ubuntu@192.168.1.145
+ DEBUG [2e59a955] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102037 )
+  INFO [2e59a955] Finished in 0.620 seconds with exit status 0 (successful).
+  INFO [dcef5c69] Running /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102037 as ubuntu@192.168.1.145
+ DEBUG [dcef5c69] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102037 )
+  INFO [dcef5c69] Finished in 0.990 seconds with exit status 0 (successful).
+ DEBUG [61525799] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [61525799] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [61525799] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [10b1df1d] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@192.168.1.145
+ DEBUG [10b1df1d] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [10b1df1d] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [10b1df1d] Finished in 0.701 seconds with exit status 0 (successful).
+ DEBUG [e3fd9518] Running if test ! -d /home/ubuntu/releases/20160628102037; then echo "Directory does not exist '/home/ubuntu/releases/20160628102037'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [e3fd9518] Command: if test ! -d /home/ubuntu/releases/20160628102037; then echo "Directory does not exist '/home/ubuntu/releases/20160628102037'" 1>&2; false; fi
+ DEBUG [e3fd9518] Finished in 0.243 seconds with exit status 0 (successful).
+  INFO [6f9671b9] Running /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION as ubuntu@192.168.1.145
+ DEBUG [6f9671b9] Command: cd /home/ubuntu/releases/20160628102037 && /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION
+  INFO [6f9671b9] Finished in 0.651 seconds with exit status 0 (successful).
+ DEBUG [db6cbb71] Running if test ! -d /home/ubuntu/releases/20160628102037; then echo "Directory does not exist '/home/ubuntu/releases/20160628102037'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [db6cbb71] Command: if test ! -d /home/ubuntu/releases/20160628102037; then echo "Directory does not exist '/home/ubuntu/releases/20160628102037'" 1>&2; false; fi
+ DEBUG [db6cbb71] Finished in 0.248 seconds with exit status 0 (successful).
+  INFO [266ba666] Running /usr/local/rvm/bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet as ubuntu@192.168.1.145
+ DEBUG [266ba666] Command: cd /home/ubuntu/releases/20160628102037 && /usr/local/rvm/bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet
+  INFO [266ba666] Finished in 30.049 seconds with exit status 0 (successful).
+  INFO [c05a8c07] Running /usr/bin/env ln -s /home/ubuntu/releases/20160628102037 /home/ubuntu/releases/current as ubuntu@192.168.1.145
+ DEBUG [c05a8c07] Command: /usr/bin/env ln -s /home/ubuntu/releases/20160628102037 /home/ubuntu/releases/current
+  INFO [c05a8c07] Finished in 0.277 seconds with exit status 0 (successful).
+  INFO [12c03368] Running /usr/bin/env mv /home/ubuntu/releases/current /home/ubuntu as ubuntu@192.168.1.145
+ DEBUG [12c03368] Command: /usr/bin/env mv /home/ubuntu/releases/current /home/ubuntu
+  INFO [12c03368] Finished in 0.267 seconds with exit status 0 (successful).
+ DEBUG [494cc47b] Running /usr/bin/env ls -xtr /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [494cc47b] Command: /usr/bin/env ls -xtr /home/ubuntu/releases
+ DEBUG [494cc47b] 	20160628073055	20160628101613	20160628101842	20160628102037
+ DEBUG [494cc47b] Finished in 0.271 seconds with exit status 0 (successful).
+ DEBUG [cc128fbc] Running if test ! -d /home/ubuntu/releases; then echo "Directory does not exist '/home/ubuntu/releases'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [cc128fbc] Command: if test ! -d /home/ubuntu/releases; then echo "Directory does not exist '/home/ubuntu/releases'" 1>&2; false; fi
+ DEBUG [cc128fbc] Finished in 0.130 seconds with exit status 0 (successful).
+  INFO [70453f2b] Running /usr/bin/env echo "Branch master (at 9e2a5b2ee18ad79f98128035f18167e32337ed2e) deployed as release 20160628102037 by shankar" >> /home/ubuntu/revisions.log as ubuntu@192.168.1.145
+ DEBUG [70453f2b] Command: cd /home/ubuntu/releases && /usr/bin/env echo "Branch master (at 9e2a5b2ee18ad79f98128035f18167e32337ed2e) deployed as release 20160628102037 by shankar" >> /home/ubuntu/revisions.log
+  INFO [70453f2b] Finished in 0.259 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:51:58 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [12792fc1] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [12792fc1] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [12792fc1] Finished in 9.925 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [bbd7ad85] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [bbd7ad85] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [bbd7ad85] Finished in 0.402 seconds with exit status 0 (successful).
+  INFO [ef4c34d6] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [ef4c34d6] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [ef4c34d6] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [ef4c34d6] Finished in 8.675 seconds with exit status 0 (successful).
+  INFO [c0e524f7] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [c0e524f7] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [c0e524f7] Finished in 0.421 seconds with exit status 0 (successful).
+ DEBUG [c1353a79] Running [ -f /home/ubuntu/current/REVISION ] as ubuntu@192.168.1.145
+ DEBUG [c1353a79] Command: [ -f /home/ubuntu/current/REVISION ]
+ DEBUG [c1353a79] Finished in 0.254 seconds with exit status 0 (successful).
+ DEBUG [34b846db] Running /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null as ubuntu@192.168.1.145
+ DEBUG [34b846db] Command: /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null
+ DEBUG [34b846db] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [34b846db] Finished in 0.418 seconds with exit status 0 (successful).
+ DEBUG [6c3ae9f4] Running [ -f /home/ubuntu/repo/HEAD ] as ubuntu@192.168.1.145
+ DEBUG [6c3ae9f4] Command: [ -f /home/ubuntu/repo/HEAD ]
+ DEBUG [6c3ae9f4] Finished in 0.166 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/repo
+ DEBUG [917e2fcf] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [917e2fcf] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [917e2fcf] Finished in 0.175 seconds with exit status 0 (successful).
+  INFO [84d74abb] Running /usr/bin/env git remote update --prune as ubuntu@192.168.1.145
+ DEBUG [84d74abb] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [84d74abb] 	Fetching origin
+  INFO [84d74abb] Finished in 4.749 seconds with exit status 0 (successful).
+ DEBUG [c9163054] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [c9163054] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [c9163054] Finished in 0.208 seconds with exit status 0 (successful).
+  INFO [b311ec39] Running /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102228 as ubuntu@192.168.1.145
+ DEBUG [b311ec39] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102228 )
+  INFO [b311ec39] Finished in 0.837 seconds with exit status 0 (successful).
+  INFO [585feb50] Running /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102228 as ubuntu@192.168.1.145
+ DEBUG [585feb50] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102228 )
+  INFO [585feb50] Finished in 0.802 seconds with exit status 0 (successful).
+ DEBUG [5159ce25] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [5159ce25] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [5159ce25] Finished in 0.197 seconds with exit status 0 (successful).
+ DEBUG [66d62c3a] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@192.168.1.145
+ DEBUG [66d62c3a] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [66d62c3a] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [66d62c3a] Finished in 0.504 seconds with exit status 0 (successful).
+ DEBUG [9921f4b3] Running if test ! -d /home/ubuntu/releases/20160628102228; then echo "Directory does not exist '/home/ubuntu/releases/20160628102228'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [9921f4b3] Command: if test ! -d /home/ubuntu/releases/20160628102228; then echo "Directory does not exist '/home/ubuntu/releases/20160628102228'" 1>&2; false; fi
+ DEBUG [9921f4b3] Finished in 0.226 seconds with exit status 0 (successful).
+  INFO [27643ed6] Running /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION as ubuntu@192.168.1.145
+ DEBUG [27643ed6] Command: cd /home/ubuntu/releases/20160628102228 && /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION
+  INFO [27643ed6] Finished in 0.472 seconds with exit status 0 (successful).
+ DEBUG [cdf4c61b] Running if test ! -d /home/ubuntu/releases/20160628102228; then echo "Directory does not exist '/home/ubuntu/releases/20160628102228'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [cdf4c61b] Command: if test ! -d /home/ubuntu/releases/20160628102228; then echo "Directory does not exist '/home/ubuntu/releases/20160628102228'" 1>&2; false; fi
+ DEBUG [cdf4c61b] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [c2032185] Running /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet as ubuntu@192.168.1.145
+ DEBUG [c2032185] Command: cd /home/ubuntu/releases/20160628102228 && /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet
+ DEBUG [c2032185] 	bash: /bin/rvm: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:53:33 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e35e6db1] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [e35e6db1] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [e35e6db1] Finished in 13.133 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [04542329] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [04542329] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [04542329] Finished in 0.964 seconds with exit status 0 (successful).
+  INFO [67d397d0] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [67d397d0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [67d397d0] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [67d397d0] Finished in 5.091 seconds with exit status 0 (successful).
+  INFO [c0cd2c1d] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [c0cd2c1d] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [c0cd2c1d] Finished in 0.630 seconds with exit status 0 (successful).
+ DEBUG [ef6aedef] Running [ -f /home/ubuntu/current/REVISION ] as ubuntu@192.168.1.145
+ DEBUG [ef6aedef] Command: [ -f /home/ubuntu/current/REVISION ]
+ DEBUG [ef6aedef] Finished in 0.243 seconds with exit status 0 (successful).
+ DEBUG [f633fe23] Running /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null as ubuntu@192.168.1.145
+ DEBUG [f633fe23] Command: /usr/bin/env cat /home/ubuntu/current/REVISION 2>/dev/null
+ DEBUG [f633fe23] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [f633fe23] Finished in 0.643 seconds with exit status 0 (successful).
+ DEBUG [c007ae4b] Running [ -f /home/ubuntu/repo/HEAD ] as ubuntu@192.168.1.145
+ DEBUG [c007ae4b] Command: [ -f /home/ubuntu/repo/HEAD ]
+ DEBUG [c007ae4b] Finished in 0.270 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/ubuntu/repo
+ DEBUG [61486130] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [61486130] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [61486130] Finished in 0.384 seconds with exit status 0 (successful).
+  INFO [0feec960] Running /usr/bin/env git remote update --prune as ubuntu@192.168.1.145
+ DEBUG [0feec960] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [0feec960] 	Fetching origin
+  INFO [0feec960] Finished in 3.755 seconds with exit status 0 (successful).
+ DEBUG [af66e09c] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [af66e09c] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [af66e09c] Finished in 0.092 seconds with exit status 0 (successful).
+  INFO [58b854c2] Running /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102408 as ubuntu@192.168.1.145
+ DEBUG [58b854c2] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env mkdir -p /home/ubuntu/releases/20160628102408 )
+  INFO [58b854c2] Finished in 0.184 seconds with exit status 0 (successful).
+  INFO [ba940cb2] Running /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102408 as ubuntu@192.168.1.145
+ DEBUG [ba940cb2] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/ubuntu/releases/20160628102408 )
+  INFO [ba940cb2] Finished in 0.539 seconds with exit status 0 (successful).
+ DEBUG [5a7b39b0] Running if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [5a7b39b0] Command: if test ! -d /home/ubuntu/repo; then echo "Directory does not exist '/home/ubuntu/repo'" 1>&2; false; fi
+ DEBUG [5a7b39b0] Finished in 0.929 seconds with exit status 0 (successful).
+ DEBUG [94c4968f] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@192.168.1.145
+ DEBUG [94c4968f] Command: cd /home/ubuntu/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [94c4968f] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e
+ DEBUG [94c4968f] Finished in 0.250 seconds with exit status 0 (successful).
+ DEBUG [b0c8b451] Running if test ! -d /home/ubuntu/releases/20160628102408; then echo "Directory does not exist '/home/ubuntu/releases/20160628102408'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [b0c8b451] Command: if test ! -d /home/ubuntu/releases/20160628102408; then echo "Directory does not exist '/home/ubuntu/releases/20160628102408'" 1>&2; false; fi
+ DEBUG [b0c8b451] Finished in 0.107 seconds with exit status 0 (successful).
+  INFO [a5a1e809] Running /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION as ubuntu@192.168.1.145
+ DEBUG [a5a1e809] Command: cd /home/ubuntu/releases/20160628102408 && /usr/bin/env echo "9e2a5b2ee18ad79f98128035f18167e32337ed2e" >> REVISION
+  INFO [a5a1e809] Finished in 0.193 seconds with exit status 0 (successful).
+ DEBUG [6f0d020b] Running if test ! -d /home/ubuntu/releases/20160628102408; then echo "Directory does not exist '/home/ubuntu/releases/20160628102408'" 1>&2; false; fi as ubuntu@192.168.1.145
+ DEBUG [6f0d020b] Command: if test ! -d /home/ubuntu/releases/20160628102408; then echo "Directory does not exist '/home/ubuntu/releases/20160628102408'" 1>&2; false; fi
+ DEBUG [6f0d020b] Finished in 0.105 seconds with exit status 0 (successful).
+  INFO [226d3638] Running /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet as ubuntu@192.168.1.145
+ DEBUG [226d3638] Command: cd /home/ubuntu/releases/20160628102408 && /bin/rvm default do bundle install --path /home/ubuntu/shared/bundle --without development test --deployment --quiet
+ DEBUG [226d3638] 	bash: /bin/rvm: No such file or directory
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:59:30 +0530 cap staging deploy:migrate
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 15:59:52 +0530 cap staging deploy:migrate
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 16:07:21 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7af6d20c] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [7af6d20c] Command: /usr/bin/env mkdir -p /tmp//
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 16:11:24 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e6e0e261] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [e6e0e261] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [e6e0e261] Finished in 7.895 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [de710c9a] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [de710c9a] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [de710c9a] Finished in 0.321 seconds with exit status 0 (successful).
+  INFO [38f54b8a] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [38f54b8a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [38f54b8a] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [38f54b8a] Finished in 3.536 seconds with exit status 0 (successful).
+  INFO [c4069267] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [c4069267] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [c4069267] Finished in 0.351 seconds with exit status 0 (successful).
+  INFO [cbbb6ec1] Running /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets as ubuntu@192.168.1.145
+ DEBUG [cbbb6ec1] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets
+  INFO [cbbb6ec1] Finished in 0.370 seconds with exit status 0 (successful).
+  INFO [02ff38d1] Running /usr/bin/env mkdir -p /home/ubuntu/shared/config as ubuntu@192.168.1.145
+ DEBUG [02ff38d1] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/config
+  INFO [02ff38d1] Finished in 0.370 seconds with exit status 0 (successful).
+ DEBUG [23a05953] Running [ -f /home/ubuntu/shared/config/database.yml ] as ubuntu@192.168.1.145
+ DEBUG [23a05953] Command: [ -f /home/ubuntu/shared/config/database.yml ]
+ DEBUG [23a05953] Finished in 0.156 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/shared/config/database.yml does not exist on 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 16:19:06 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3260b1b2] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [3260b1b2] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [3260b1b2] Finished in 11.861 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [b2c3e9b3] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [b2c3e9b3] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [b2c3e9b3] Finished in 0.514 seconds with exit status 0 (successful).
+  INFO [6642d5c8] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [6642d5c8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [6642d5c8] 	9e2a5b2ee18ad79f98128035f18167e32337ed2e	refs/heads/master
+  INFO [6642d5c8] Finished in 3.892 seconds with exit status 0 (successful).
+  INFO [93dec2f0] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [93dec2f0] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [93dec2f0] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [57fbdc16] Running /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets as ubuntu@192.168.1.145
+ DEBUG [57fbdc16] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets
+  INFO [57fbdc16] Finished in 0.316 seconds with exit status 0 (successful).
+  INFO [b48dd3f2] Running /usr/bin/env mkdir -p /home/ubuntu/shared/config as ubuntu@192.168.1.145
+ DEBUG [b48dd3f2] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/config
+  INFO [b48dd3f2] Finished in 0.178 seconds with exit status 0 (successful).
+ DEBUG [eeeddc43] Running [ -f /home/ubuntu/shared/config/database.yml ] as ubuntu@192.168.1.145
+ DEBUG [eeeddc43] Command: [ -f /home/ubuntu/shared/config/database.yml ]
+ DEBUG [eeeddc43] Finished in 0.081 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/shared/config/database.yml does not exist on 192.168.1.145

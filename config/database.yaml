@@ -1,0 +1,8 @@
+adapter: mysql
+database: my_db
+hostname: 192.168.1.145
+username: root
+password: trov
+socket: /tmp/mysql.sock
+pool: 5
+timeout: 5000
