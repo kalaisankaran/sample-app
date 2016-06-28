@@ -8,6 +8,9 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 
+set :deploy_to, '/home/ubuntu'
+
+server '192.168.1.145', user: 'ubuntu'
 
 # role-based syntax
 # ==================
