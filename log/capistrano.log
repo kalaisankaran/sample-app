@@ -825,3 +825,36 @@
  DEBUG [eeeddc43] Command: [ -f /home/ubuntu/shared/config/database.yml ]
  DEBUG [eeeddc43] Finished in 0.081 seconds with exit status 1 (failed).
  ERROR linked file /home/ubuntu/shared/config/database.yml does not exist on 192.168.1.145
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 18:19:10 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [08135e50] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [08135e50] Command: /usr/bin/env mkdir -p /tmp//
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-06-28 18:19:44 +0530 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4f45962d] Running /usr/bin/env mkdir -p /tmp// as ubuntu@192.168.1.145
+ DEBUG [4f45962d] Command: /usr/bin/env mkdir -p /tmp//
+  INFO [4f45962d] Finished in 8.402 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp//git-ssh.sh 0.0%
+  INFO Uploading /tmp//git-ssh.sh 100.0%
+  INFO [5b1bca02] Running /usr/bin/env chmod +rx /tmp//git-ssh.sh as ubuntu@192.168.1.145
+ DEBUG [5b1bca02] Command: /usr/bin/env chmod +rx /tmp//git-ssh.sh
+  INFO [5b1bca02] Finished in 0.321 seconds with exit status 0 (successful).
+  INFO [215cb005] Running /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git as ubuntu@192.168.1.145
+ DEBUG [215cb005] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp//git-ssh.sh" ; /usr/bin/env git ls-remote --heads https://github.com/trovsankar/sample-app.git )
+ DEBUG [215cb005] 	ed48359d7302a2bcb9eecb9bff805c52568fad3f	refs/heads/master
+  INFO [215cb005] Finished in 4.900 seconds with exit status 0 (successful).
+  INFO [f8943159] Running /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases as ubuntu@192.168.1.145
+ DEBUG [f8943159] Command: /usr/bin/env mkdir -p /home/ubuntu/shared /home/ubuntu/releases
+  INFO [f8943159] Finished in 0.363 seconds with exit status 0 (successful).
+  INFO [d97de864] Running /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets as ubuntu@192.168.1.145
+ DEBUG [d97de864] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/log /home/ubuntu/shared/tmp/pids /home/ubuntu/shared/tmp/cache /home/ubuntu/shared/tmp/sockets /home/ubuntu/shared/vendor/bundle /home/ubuntu/shared/public/system /home/ubuntu/shared/public/uploads /home/ubuntu/shared/public/prepackaged-assets
+  INFO [d97de864] Finished in 0.346 seconds with exit status 0 (successful).
+  INFO [50d7aa39] Running /usr/bin/env mkdir -p /home/ubuntu/shared/config as ubuntu@192.168.1.145
+ DEBUG [50d7aa39] Command: /usr/bin/env mkdir -p /home/ubuntu/shared/config
+  INFO [50d7aa39] Finished in 0.348 seconds with exit status 0 (successful).
+ DEBUG [78197a95] Running [ -f /home/ubuntu/shared/config/database.yml ] as ubuntu@192.168.1.145
+ DEBUG [78197a95] Command: [ -f /home/ubuntu/shared/config/database.yml ]
+ DEBUG [78197a95] Finished in 0.144 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/shared/config/database.yml does not exist on 192.168.1.145
